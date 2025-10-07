@@ -1,0 +1,400 @@
+/* Custom styles to match the exact design */
+
+/* Header styles */
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+header {
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+/* Global layout to prevent overlap with fixed header and sidebar */
+body {
+    padding-top: 64px; /* header height (h-16) */
+}
+@media (min-width: 768px) {
+    body {
+        padding-right: 18rem; /* sidebar width (w-72) */
+    }
+}
+@media (max-width: 767px) {
+    body {
+        padding-right: 0;
+    }
+}
+
+/* Hero section adjustments */
+.hero-section {
+    background: linear-gradient(135deg, #4A148C 0%, #2E1065 100%);
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #3B82F6;
+    border-radius: 2px;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #3B82F6;
+    border-color: #3B82F6;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Button hover effects */
+button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 20, 140, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Form input focus effects */
+input:focus {
+    box-shadow: 0 0 0 3px rgba(74, 20, 140, 0.1);
+    border-color: #4A148C;
+}
+
+/* Sidebar scroll effect */
+.sidebar {
+    transition: transform 0.3s ease;
+}
+
+/* WhatsApp button pulse effect */
+.whatsapp-button {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4A148C;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2E1065;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+    .hero-section {
+        flex-direction: column;
+        padding-right: 0; /* no sidebar on mobile */
+    }
+    
+    .hero-section > div:first-child {
+        width: 100%;
+        min-height: 50vh;
+    }
+    
+    .hero-section > div:last-child {
+        width: 100%;
+        min-height: 50vh;
+    }
+    
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        right: 0;
+        top: 0;
+        transform: none;
+        box-shadow: none;
+    }
+    
+    header .hidden {
+        display: none;
+    }
+    
+    /* Hide fixed sidebar on mobile */
+    .fixed.right-0 {
+        display: none;
+    }
+    
+    /* Show mobile sidebar */
+    .mobile-sidebar {
+        display: block;
+    }
+    
+    /* Adjust hero section for mobile */
+    section.relative.min-h-screen.flex {
+        flex-direction: column;
+    }
+    
+    section.relative.min-h-screen.flex > div:first-child {
+        width: 100%;
+        min-height: 60vh;
+    }
+    
+    section.relative.min-h-screen.flex > div:last-child {
+        width: 100%;
+        min-height: 40vh;
+    }
+    
+    /* Mobile navigation */
+    .mobile-nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 60;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Price cards mobile */
+    .grid.md\\:grid-cols-3 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Floor plans mobile */
+    .grid.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Floating buttons mobile */
+    .fixed.bottom-6.right-6 {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .fixed.bottom-6.right-6 button {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .fixed.right-0 {
+        width: 18rem;
+    }
+    
+    section.relative.min-h-screen.flex > div:first-child {
+        width: 50%;
+    }
+    
+    section.relative.min-h-screen.flex > div:last-child {
+        width: 50%;
+        margin-right: 18rem;
+    }
+}
+
+/* Desktop layout adjustments */
+@media (min-width: 1025px) {
+    section.relative.min-h-screen.flex > div:first-child {
+        width: 40%;
+    }
+    
+    section.relative.min-h-screen.flex > div:last-child {
+        width: 60%;
+        margin-right: 18rem;
+    }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1400px) {
+    .max-w-7xl {
+        max-width: 80rem;
+    }
+}
+
+/* Hero section layout fixes */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section .bg-cover {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Make background image full width and visible */
+@media (min-width: 769px) {
+    .hero-section {
+        position: relative;
+        width: 100%;
+    }
+    
+    .hero-section > div:last-child {
+        width: 60%;
+        position: relative;
+        z-index: 1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .hero-section > div:first-child {
+        width: 40%;
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Ensure sidebar doesn't overlap hero content */
+    .hero-section {
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+    }
+    
+    .hero-section > div:first-child {
+        width: 100%;
+        min-height: 60vh;
+    }
+    
+    .hero-section > div:last-child {
+        width: 100%;
+        min-height: 40vh;
+    }
+}
+
+/* Loading animation for form submission */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Custom font for Prestige logo */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.prestige-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Enhanced button styles */
+.btn-primary {
+    background: linear-gradient(135deg, #4A148C 0%, #2E1065 100%);
+    border: none;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2E1065 0%, #1A0B3D 100%);
+    box-shadow: 0 8px 25px rgba(74, 20, 140, 0.4);
+}
+
+/* Form validation styles */
+.error {
+    border-color: #EF4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.success {
+    border-color: #10B981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1) !important;
+}
+
+/* Animation for feature list items */
+.feature-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.3s; }
+.feature-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Price box animation */
+.price-box {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

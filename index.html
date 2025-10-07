@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Raintree Park - Authorised Sales Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'prestige-purple': '#4A148C',
+                        'prestige-light-purple': '#7B1FA2',
+                        'prestige-dark-purple': '#2E1065'
+                    },
+                    fontFamily: {
+                        'prestige': ['serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-2xl prestige-logo text-gray-700">Prestige</div>
+                    <div class="ml-2 text-sm font-bold text-black">AUTHORISED SALES PARTNER</div>
+                </div>
+
+                <!-- Navigation (Desktop) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#overview" class="text-gray-700 hover:text-prestige-purple transition">Overview</a>
+                    <a href="#price" class="text-gray-700 hover:text-prestige-purple transition">Price List</a>
+                    <a href="#floorplans" class="text-gray-700 hover:text-prestige-purple transition">Floor Plan</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-prestige-purple transition">Gallery</a>
+                    <a href="#location" class="text-gray-700 hover:text-prestige-purple transition">Location</a>
+                </nav>
+
+                <!-- Buttons (Desktop) -->
+                <div class="hidden md:flex space-x-3">
+                    <button
+                        class="bg-prestige-purple text-white px-4 py-2 rounded text-sm font-medium hover:bg-prestige-dark-purple transition">
+                        Pre Register
+                    </button>
+                    <button
+                        class="bg-prestige-purple text-white px-4 py-2 rounded text-sm font-medium hover:bg-prestige-dark-purple transition flex items-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        +91 8071737880
+                    </button>
+                </div>
+
+                <!-- Hamburger (Mobile) -->
+                <button id="mobileMenuButton" aria-label="Open menu"
+                    class="md:hidden inline-flex items-center justify-center w-10 h-10 text-gray-700 hover:text-prestige-purple focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <nav class="flex flex-col space-y-2 p-4">
+                <a href="#overview" class="text-gray-700 hover:text-prestige-purple transition">Overview</a>
+                <a href="#price" class="text-gray-700 hover:text-prestige-purple transition">Price List</a>
+                <a href="#floorplans" class="text-gray-700 hover:text-prestige-purple transition">Floor Plan</a>
+                <a href="#gallery" class="text-gray-700 hover:text-prestige-purple transition">Gallery</a>
+                <a href="#location" class="text-gray-700 hover:text-prestige-purple transition">Location</a>
+                <button
+                    class="bg-prestige-purple text-white px-4 py-2 rounded text-sm font-medium hover:bg-prestige-dark-purple transition">
+                    Pre Register
+                </button>
+                <button
+                    class="bg-prestige-purple text-white px-4 py-2 rounded text-sm font-medium hover:bg-prestige-dark-purple transition flex items-center">
+                    <i class="fas fa-phone mr-2"></i>
+                    +91 8071737880
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="hidden md:hidden fixed top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-[9999]">
+        <div class="px-4 py-4 space-y-3">
+            <a href="#overview" class="block py-2 text-gray-700 hover:text-prestige-purple">Overview</a>
+            <a href="#price" class="block py-2 text-gray-700 hover:text-prestige-purple">Price List</a>
+            <a href="#floorplans" class="block py-2 text-gray-700 hover:text-prestige-purple">Floor Plan</a>
+            <a href="#gallery" class="block py-2 text-gray-700 hover:text-prestige-purple">Gallery</a>
+            <a href="#location" class="block py-2 text-gray-700 hover:text-prestige-purple">Location</a>
+            <div class="pt-2 border-t border-gray-200 grid grid-cols-2 gap-3">
+                <button class="w-full btn-primary text-white py-2 rounded text-sm">Pre Register</button>
+                <button class="w-full bg-prestige-dark-purple text-white py-2 rounded text-sm">Call</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- popup -->
+
+     <div id="popupOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <!-- Popup Box -->
+    <div class="bg-white w-[467px] max-w-[90%] rounded-md shadow-lg relative p-8">
+      <!-- Close Button -->
+      <button id="closePopupBtn" class="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold">
+        &times;
+      </button>
+
+      <!-- Heading -->
+      <h2 class="text-center text-2xl font-bold text-gray-900 mb-2">Enquiry Now</h2>
+      <p class="text-center text-sm text-gray-600 mb-6">
+        Register Here And Avail The <span class="text-red-600 font-semibold">Best Offers!!</span>
+      </p>
+
+      <!-- Form -->
+      <form id="enquiryForm" class="space-y-4">
+        <input type="text" placeholder="Enter Full Name" class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+        <input type="email" placeholder="Enter Email" class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+        <input type="tel" placeholder="Enter Phone Number" class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+
+        <label class="flex items-start text-xs text-gray-600 mt-2">
+          <input type="checkbox" class="mt-1 mr-2 accent-indigo-600" required>
+          I authorize Prestige Raintree Park and its representatives to contact me with updates via SMS, Email, WhatsApp and Call about its details and offers. This consent overrides any registration for DNC / NDNC.
+        </label>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full bg-indigo-800 text-white py-2 mt-4 rounded hover:bg-indigo-900 transition font-semibold">
+          Submit
+        </button>
+
+        <!-- Phone Button -->
+        <a href="tel:+918071737880" class="w-full block text-center bg-indigo-900 text-white py-2 mt-2 rounded font-semibold hover:bg-indigo-950 transition">
+          +91 8071737880
+        </a>
+      </form>
+    </div>
+  </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex hero-section"
+        style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
+        <!-- Left Information Panel -->
+        <div class="w-2/5 bg-prestige-purple/95 flex flex-col justify-center px-8 py-16 relative z-10">
+            <!-- Location -->
+            <div class="text-white text-sm mb-4">At Varthur Lake Road, Whitefield, Bangalore</div>
+
+            <!-- Project Name -->
+            <h1 class="text-white text-4xl font-bold mb-8">Prestige Raintree Park</h1>
+
+            <!-- Key Features -->
+            <div class="space-y-4 mb-8">
+                <div class="flex items-center feature-item">
+                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-3">
+                        <span class="text-prestige-purple font-bold text-sm">+</span>
+                    </div>
+                    <span class="text-white">Total land parcel : 21 Acres</span>
+                </div>
+                <div class="flex items-center feature-item">
+                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-3">
+                        <span class="text-prestige-purple font-bold text-sm">+</span>
+                    </div>
+                    <span class="text-white">Total Units - 1368+</span>
+                </div>
+                <div class="flex items-center feature-item">
+                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-3">
+                        <span class="text-prestige-purple font-bold text-sm">+</span>
+                    </div>
+                    <span class="text-white">Possession Date: Dec 2028</span>
+                </div>
+                <div class="flex items-center feature-item">
+                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-3">
+                        <span class="text-prestige-purple font-bold text-sm">+</span>
+                    </div>
+                    <span class="text-white">100+ Acres Township Development</span>
+                </div>
+            </div>
+
+            <!-- Payment Plan Box -->
+            <div class="border border-prestige-light-purple p-4 mb-6">
+                <div class="text-white text-sm">Pay 10% Now & Balance Payments from June</div>
+                <div class="text-white text-sm">2026 onwards</div>
+                <div class="text-white text-sm font-semibold">No Bank Loan Required</div>
+            </div>
+
+            <!-- Starting Price Box -->
+            <div class="bg-prestige-dark-purple p-4 price-box">
+                <div class="text-white text-sm">4 & 5 BHK Starting Price</div>
+                <div class="text-white text-2xl font-bold">₹ 3.22 CR ONWARDS*</div>
+            </div>
+        </div>
+        <!-- Right spacer just to keep layout balanced on md+ -->
+        <div class="hidden md:block w-3/5"></div>
+    </section>
+
+    <!-- Fixed Right Sidebar -->
+    <div class="fixed right-0 top-0 h-full w-72 bg-white shadow-2xl z-40 pt-16 hidden md:block">
+        <div class="p-6">
+            <!-- Top Buttons -->
+            <div class="space-y-3 mb-8">
+                <button class="w-full btn-primary text-white py-3 rounded font-medium">
+                    Pre Register
+                </button>
+                <button class="w-full btn-primary text-white py-3 rounded font-medium flex items-center justify-center">
+                    <i class="fas fa-phone mr-2"></i>
+                    +91 8071737880
+                </button>
+                <button
+                    class="w-full bg-prestige-dark-purple text-white py-3 rounded font-medium hover:bg-prestige-purple transition flex items-center justify-center">
+                    <i class="fas fa-download mr-2"></i>
+                    Download Brochure
+                </button>
+            </div>
+
+            <!-- Book A Site Visit Form -->
+            <div class="bg-white p-6 border border-gray-200 rounded-lg">
+                <h3 class="text-xl font-bold text-black mb-6">Book A Site Visit</h3>
+
+                <form id="siteVisitForm" class="space-y-4">
+                    <div>
+                        <input type="text" placeholder="Enter Full Name"
+                            class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-prestige-purple focus:border-transparent">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Enter Email"
+                            class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-prestige-purple focus:border-transparent">
+                    </div>
+                    <div>
+                        <input type="tel" placeholder="Enter Phone Number"
+                            class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-prestige-purple focus:border-transparent">
+                    </div>
+
+                    <div class="flex items-start space-x-3">
+                        <input type="checkbox" id="consent"
+                            class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        <label for="consent" class="text-xs text-gray-600 leading-relaxed">
+                            I authorize Prestige Raintree Park and its representatives to contact me with updates via
+                            SMS, Email, WhatsApp and Call about its details and offers. This consent overrides any
+                            registration for DNC/NDNC.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full btn-primary text-white py-3 rounded font-bold">
+                        Submit
+                    </button>
+                </form>
+            </div>
+
+            <!-- Bottom Contact -->
+            <div class="mt-6">
+                <div class="bg-prestige-purple text-white py-3 px-4 rounded flex items-center justify-between">
+                    <span>+91 8071737880</span>
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <div
+                        class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center whatsapp-button cursor-pointer">
+                        <i class="fab fa-whatsapp text-white text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar (for mobile devices) -->
+    <div class="md:hidden bg-white shadow-lg p-6 mb-8">
+        <div class="space-y-4 mb-6">
+            <button class="w-full btn-primary text-white py-3 rounded font-medium">
+                Pre Register
+            </button>
+            <button class="w-full btn-primary text-white py-3 rounded font-medium flex items-center justify-center">
+                <i class="fas fa-phone mr-2"></i>
+                +91 8071737880
+            </button>
+            <button
+            
+                class="w-full bg-prestige-dark-purple text-white py-3 rounded font-medium hover:bg-prestige-purple transition flex items-center justify-center">
+                <i class="fas fa-download mr-2"></i>
+                Download Brochure
+            </button>
+        </div>
+
+        <!-- Book A Site Visit Form -->
+        <div class="bg-white p-6 border border-gray-200 rounded-lg">
+            <h3 class="text-xl font-bold text-black mb-6">Book A Site Visit</h3>
+
+            <form id="mobileSiteVisitForm" class="space-y-4">
+                <div>
+                    <input type="text" placeholder="Enter Full Name"
+                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-prestige-purple focus:border-transparent">
+                </div>
+                <div>
+                    <input type="email" placeholder="Enter Email"
+                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-prestige-purple focus:border-transparent">
+                </div>
+                <div>
+                    <input type="tel" placeholder="Enter Phone Number"
+                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-prestige-purple focus:border-transparent">
+                </div>
+
+                <div class="flex items-start space-x-3">
+                    <input type="checkbox" id="mobileConsent"
+                        class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="mobileConsent" class="text-xs text-gray-600 leading-relaxed">
+                        I authorize Prestige Raintree Park and its representatives to contact me with updates via SMS,
+                        Email, WhatsApp and Call about its details and offers. This consent overrides any registration
+                        for DNC/NDNC.
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full btn-primary text-white py-3 rounded font-bold">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+        <!-- Bottom Contact -->
+        <div class="mt-6">
+            <div class="bg-prestige-purple text-white py-3 px-4 rounded flex items-center justify-between">
+                <span>+91 8071737880</span>
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="mt-4 flex justify-center">
+                <div
+                    class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center whatsapp-button cursor-pointer">
+                    <i class="fab fa-whatsapp text-white text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Prestige Raintree Park</h2>
+                <p class="text-gray-600">At Varthur Lake Road, Whitefield, Bangalore</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                    Experience luxury living at Prestige Raintree Park, where modern amenities meet natural beauty.
+                    Our low-density luxury condominiums offer spacious living with world-class facilities.
+                    Located in the heart of Whitefield, you'll have easy access to top schools, premium malls,
+                    renowned hospitals, and major tech parks. Each unit features well-designed floor plans with
+                    beautiful landscape views, creating the perfect blend of comfort and elegance.
+                </p>
+
+                <div class="text-center">
+                    <button id="openPopupBtn" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold flex items-center mx-auto">
+                        <i class="fas fa-download mr-2"></i>
+                        Download Brochure
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section id="price" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sm text-gray-500 uppercase tracking-wide">PRICE SECTION</p>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Unlock the Door to Luxury</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-prestige-purple rounded-lg p-8 text-white">
+                    <div class="text-3xl font-bold mb-2">₹ 3.22 Cr*</div>
+                    <div class="text-lg mb-4">4 BHK + 3T + MAIDS</div>
+                    <div class="text-sm mb-6">2451-2588 Sq.Ft.</div>
+                    <button
+                        class="w-full bg-white text-prestige-purple py-3 rounded font-semibold hover:bg-gray-100 transition">
+                        Enquire Now
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-prestige-purple rounded-lg p-8 text-white">
+                    <div class="text-3xl font-bold mb-2">₹ On Request*</div>
+                    <div class="text-lg mb-4">4 BHK + 4T + MAIDS</div>
+                    <div class="text-sm mb-6">2900 Sq.Ft.</div>
+                    <button
+                        class="w-full bg-white text-prestige-purple py-3 rounded font-semibold hover:bg-gray-100 transition">
+                        Enquire Now
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-prestige-purple rounded-lg p-8 text-white">
+                    <div class="text-3xl font-bold mb-2">₹ On Request*</div>
+                    <div class="text-lg mb-4">5BHK</div>
+                    <div class="text-sm mb-6">3500-3700 Sq.Ft.</div>
+                    <button
+                        class="w-full bg-white text-prestige-purple py-3 rounded font-semibold hover:bg-gray-100 transition">
+                        Enquire Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor Plans Section -->
+    <section id="floorplans" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sm text-gray-500 uppercase tracking-wide">FLOOR PLANS</p>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Your Vision, Our Floor Plans</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="relative">
+                    <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-gray-600 mb-2">4BHK</div>
+                            <div class="text-gray-500">Floor Plan Image</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-gray-600 mb-2">5BHK</div>
+                            <div class="text-gray-500">Floor Plan Image</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="btn-primary text-white px-8 py-3 rounded-lg font-semibold">
+                    Get All Floor Plans
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900">Gallery</h2>
+            </div>
+
+            <div class="mb-8">
+                <div class="bg-cover bg-center h-96 rounded-lg"
+                    style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="btn-primary text-white px-8 py-3 rounded-lg font-semibold">
+                    Enquire Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Advantages Section -->
+    <section id="location" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sm text-gray-500 uppercase tracking-wide">LOCATION ADVANTAGES</p>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Discover Your Perfect Place in the Perfect Location
+                </h2>
+            </div>
+
+            <div class="mb-8">
+                <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gray-600 mb-2">Location Map</div>
+                        <div class="text-gray-500">Interactive Map View</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="btn-primary text-white px-8 py-3 rounded-lg font-semibold">
+                    Know More About Location
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900">About Prestige Raintree Park</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    The Prestige Group, established in 1986, is one of India's leading real estate developers with over
+                    200 completed projects across 12 cities.
+                    With a strong presence in Bangalore, Chennai, Hyderabad, Mumbai, and other major cities, we have
+                    delivered over 50 million square feet of
+                    residential, commercial, and retail space. Our commitment to quality, innovation, and customer
+                    satisfaction has made us a trusted name in
+                    the real estate industry. Prestige Raintree Park represents our vision of creating modern living
+                    spaces that offer comfort, convenience, and
+                    connectivity in well-planned communities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    <strong>Disclaimer:</strong> The content on this website is for information purposes only. Prices,
+                    specifications, and availability are subject to change without notice.
+                    Images are for representation purposes only. We are an Authorized Channel Partner with many
+                    Developers. Please verify all details before making any decisions.
+                </p>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-400">
+                    All Right Reserved © 2025
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-4">
+        <button
+            class="w-14 h-14 bg-prestige-purple text-white rounded-full flex items-center justify-center shadow-lg hover:bg-prestige-dark-purple transition">
+            <i class="fas fa-phone"></i>
+        </button>
+        <button
+            class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
