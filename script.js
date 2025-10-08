@@ -1,4 +1,22 @@
 
+    // Your WhatsApp Number (include country code, no + or spaces)
+    const whatsappNumber = "918071737880";
+
+    // Select all buttons with the 'whatsapp-btn' class
+    const whatsappButtons = document.querySelectorAll('.whatsapp-btn');
+
+    whatsappButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const message = encodeURIComponent(button.dataset.message);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank'); // Opens in new tab or WhatsApp app
+      });
+    });
+
+
+
+
+
 
 
  const mobileMenuButton = document.getElementById('mobileMenuButton');

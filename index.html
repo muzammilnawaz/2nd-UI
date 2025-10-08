@@ -83,11 +83,11 @@
                     class="bg-prestige-purple text-white px-4 py-2 rounded text-sm font-medium hover:bg-prestige-dark-purple transition">
                     Pre Register
                 </button>
-                <button
-                    class="bg-prestige-purple text-white px-4 py-2 rounded text-sm font-medium hover:bg-prestige-dark-purple transition flex items-center">
-                    <i class="fas fa-phone mr-2"></i>
-                    +91 8071737880
-                </button>
+               <button id="callBtn"
+      class="bg-indigo-900 text-white px-5 py-2 rounded text-sm font-medium hover:bg-indigo-950 transition flex items-center">
+      <i class="fas fa-phone mr-2"></i>
+      +91 8071737880
+    </button>
             </nav>
         </div>
     </header>
@@ -210,18 +210,20 @@
         <div class="p-6">
             <!-- Top Buttons -->
             <div class="space-y-3 mb-8">
-                <button class="w-full btn-primary text-white py-3 rounded font-medium">
-                    Pre Register
-                </button>
-                <button class="w-full btn-primary text-white py-3 rounded font-medium flex items-center justify-center">
-                    <i class="fas fa-phone mr-2"></i>
-                    +91 8071737880
-                </button>
-                <button
-                    class="w-full bg-prestige-dark-purple text-white py-3 rounded font-medium hover:bg-prestige-purple transition flex items-center justify-center">
-                    <i class="fas fa-download mr-2"></i>
-                    Download Brochure
-                </button>
+               
+               <button class="bg-indigo-900 text-white py-3 font-medium hover:bg-indigo-950 transition whatsapp-btn w-full" data-message="Hi, I want to pre-register for Prestige Raintree Park.">
+        Pre Register
+      </button>
+      <button class="bg-indigo-900 text-white py-3 font-medium hover:bg-indigo-950 transition whatsapp-btn w-full" data-message="Hi, I need more details about Prestige Raintree Park.">
+        +91 8071737880
+      </button>
+                    <button class="bg-indigo-900 text-white py-3 mt-2 font-medium hover:bg-indigo-950 transition whatsapp-btn w-full flex items-center justify-center gap-2"
+      data-message="Hi, please share the brochure for Prestige Raintree Park.">
+      Download Brochure
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 12l-3-3m3 3l3-3M4 20h16" />
+      </svg>
+    </button>
             </div>
 
             <!-- Book A Site Visit Form -->
@@ -421,28 +423,22 @@
                 <h2 class="text-4xl font-bold text-gray-900 mt-2">Your Vision, Our Floor Plans</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8 p-6 rounded-lg">
                 <div class="relative">
-                    <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-gray-600 mb-2">4BHK</div>
-                            <div class="text-gray-500">Floor Plan Image</div>
-                        </div>
+                    <div class=" h-64 rounded-lg flex items-center justify-center">
+                        <img src="plan1 (1).webp" height="100%" width="100%" alt="4 BHK Floor Plan">
                     </div>
                 </div>
 
                 <div class="relative">
-                    <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-gray-600 mb-2">5BHK</div>
-                            <div class="text-gray-500">Floor Plan Image</div>
-                        </div>
+                    <div class="h-64 rounded-lg flex items-center justify-center">
+                        <img src="plan1.webp" height="100%" width="100%" alt="5 BHK Floor Plan">
                     </div>
                 </div>
             </div>
 
-            <div class="text-center">
-                <button class="btn-primary text-white px-8 py-3 rounded-lg font-semibold">
+            <div class="text-center p-6">
+                <button class="btn-primary text-white px-8 py-3 rounded-full">
                     Get All Floor Plans
                 </button>
             </div>
