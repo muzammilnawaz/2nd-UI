@@ -36,8 +36,6 @@
                 <div class="flex items-center">
                     <img src="logo.webp" height="40
                     " width="150" alt="Prestige Logo">
-                    <!-- <div class="text-2xl prestige-logo text-gray-700">Prestige</div>
-                    <div class="ml-2 text-sm font-bold text-black">AUTHORISED SALES PARTNER</div> -->
                 </div>
 
                 <!-- Navigation (Desktop) -->
@@ -66,7 +64,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 bg-[rgb(235,237,249)] py-10">
             <nav class="flex flex-col space-y-2 p-4">
                 <a href="#overview" class="text-gray-700 hover:text-prestige-purple transition">Overview</a>
                 <a href="#price" class="text-gray-700 hover:text-prestige-purple transition">Price List</a>
@@ -103,7 +101,6 @@
     </div>
 
 
-    <!-- popup -->
 
     <div id="popupOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
         <!-- Popup Box -->
@@ -121,7 +118,7 @@
             </p>
 
             <!-- Form -->
-            <form id="enquiryForm" class="space-y-4">
+            <form id="enquiryForm" class="space-y-4 bg-[rgb(235,237,249)] py-10">
                 <input type="text" placeholder="Enter Full Name"
                     class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     required>
@@ -133,7 +130,7 @@
                     required>
 
                 <label class="flex items-start text-xs text-gray-600 mt-2">
-                    <input type="checkbox" class="mt-1 mr-2 accent-indigo-600" required>
+                    <input type="checkbox" class="mt-1 mr-2 accent-indigo-600 " required>
                     I authorize Prestige Raintree Park and its representatives to contact me with updates via SMS,
                     Email, WhatsApp and Call about its details and offers. This consent overrides any registration for
                     DNC / NDNC.
@@ -145,11 +142,11 @@
                     Submit
                 </button>
 
-                <!-- Phone Button -->
-                <a href="tel:+918071737880"
-                    class="w-full block text-center bg-indigo-900 text-white py-2 mt-2 rounded font-semibold hover:bg-indigo-950 transition">
+                  <button
+                    class="bg-indigo-900 text-white py-3 font-medium hover:bg-indigo-950 transition whatsapp-btn w-full"
+                    data-message="Hi, I need more details about Prestige Raintree Park.">
                     +91 8071737880
-                </a>
+                </button>
             </form>
         </div>
     </div>
@@ -211,10 +208,11 @@
     </section>
 
     <!-- Fixed Right Sidebar -->
-    <div class="fixed right-0 top-0 h-full w-72 bg-white shadow-2xl z-40 pt-16 hidden md:block">
+    <div class="fixed right-0 top-0 h-full w-[350px] bg-[rgb(235,237,249)] py-10 shadow-2xl z-40 pt-16 hidden md:block">
         <div class="p-6">
+
             <!-- Top Buttons -->
-            <div class="space-y-3 mb-8">
+            <div class="space-y-3 mb-8 ">
 
                 <button
                     class="bg-indigo-900 text-white py-3 font-medium hover:bg-indigo-950 transition whatsapp-btn w-full"
@@ -227,11 +225,11 @@
                     +91 8071737880
                 </button>
                 <button
-                    class="bg-indigo-900 text-white py-3 mt-2 font-medium hover:bg-indigo-950 transition whatsapp-btn w-full flex items-center justify-center gap-2"
+                    class="bg-indigo-900  text-white py-3 mt-2 font-medium hover:bg-indigo-950 transition whatsapp-btn w-full flex items-center justify-center gap-2"
                     data-message="Hi, please share the brochure for Prestige Raintree Park.">
                     Download Brochure
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="currentColor" class="w-5 h-5">
+                        stroke="currentColor" class="w-5 h-5 animate-bounce">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 12l-3-3m3 3l3-3M4 20h16" />
                     </svg>
                 </button>
